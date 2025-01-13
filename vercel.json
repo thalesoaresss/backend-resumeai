@@ -1,40 +1,15 @@
 {
-  "version": 2,
-  "builds": [
-      {
-          "src": "index.ts",
-          "use": "@vercel/node"
-      }
-  ],
-  "routes": [
-      {
-          "src": "/(.*)",
-          "dest": "/index.ts"
-      }
-  ],
-  "rewrites": [
-    {
-      "source": "/api/summarize",
-      "destination": "https://backend-resumeai.vercel.app/summarize"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/api/summarize",
-      "headers": [
+    "version": 2,
+    "builds": [
         {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        },
-        {
-          "key": "Access-Control-Allow-Methods",
-          "value": "GET, POST, OPTIONS"
-        },
-        {
-          "key": "Access-Control-Allow-Headers",
-          "value": "Content-Type"
+            "src": "server.js",
+            "use": "@vercel/node"
         }
-      ]
-    }
-  ]
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/server.js"
+        }
+    ]
 }
