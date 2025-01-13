@@ -32,6 +32,10 @@ app.post("/summarize", async (req, res) => {
         retornar(res.send({ summary, topics }));
     }
 });
+app.get("/home", async (req, res) => {
+    console.log("HOME")
+    res.send("teste");
+});
 function retornar(res) {
     console.log(res);
     return res;
