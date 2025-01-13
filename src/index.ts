@@ -38,6 +38,9 @@ app.post("/summarize", async (req: SummarizeRequest, res: Response) => {
         retornar(res.send({summary, topics}))
     }
 })
+app.get("/", async (req: SummarizeRequest, res: Response) => {
+  res.send("teste")
+})
 
 function retornar(res: Response){
   console.log(res)
