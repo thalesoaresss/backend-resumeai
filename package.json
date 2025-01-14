@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf ./build && tsc",
+    "build": "rimraf ./build && tsc ",
     "dev": "nodemon",
     "start": "npm build && node build/index.js"
   },
@@ -12,6 +12,7 @@
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/node": "^22.9.1",
+    "esbuild": "^0.24.2",
     "nodemon": "^3.1.7",
     "rimraf": "^6.0.1",
     "ts-node": "^10.9.2",
@@ -25,7 +26,13 @@
     "gpt-3-encoder": "^1.1.4",
     "openai": "^4.73.0",
     "openai-api-node": "^1.0.0",
+    "qs": "^6.13.1",
     "youtube-transcript": "^1.2.1"
+  },
+  "functions": {
+    "api/hello-serverless.js": {
+      "runtime": "nodejs14.x",
+      "includeFiles": "build/**"
+    }
   }
-
 }
